@@ -8,10 +8,12 @@ namespace SalonDeBelleza.Views
 {
     public partial class FrmLogin : Form
     {
-        private TextBox txtUsuario;
-        private TextBox txtPassword;
         private Button btnLogin;
         private Label lblUsuario;
+        private GroupBox groupBox1;
+        private Label label1;
+        private Button button2;
+        private Button button1;
         private Label lblPassword;
 
         public FrmLogin()
@@ -21,91 +23,181 @@ namespace SalonDeBelleza.Views
 
         private void InitializeComponent()
         {
-            this.txtUsuario = new TextBox();
-            this.txtPassword = new TextBox();
-            this.btnLogin = new Button();
-            this.lblUsuario = new Label();
-            this.lblPassword = new Label();
-            
-            this.SuspendLayout();
-            
-            // lblUsuario
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new Point(50, 40);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new Size(60, 20);
-            this.lblUsuario.Text = "Usuario:";
-            
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
+            txtUsuario = new TextBox();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            lblUsuario = new Label();
+            lblPassword = new Label();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
             // txtUsuario
-            this.txtUsuario.Location = new Point(130, 37);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new Size(200, 27);
-            
-            // lblPassword
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new Point(50, 90);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new Size(86, 20);
-            this.lblPassword.Text = "Contraseña:";
-            
+            // 
+            txtUsuario.BorderStyle = BorderStyle.FixedSingle;
+            txtUsuario.Location = new Point(142, 54);
+            txtUsuario.Multiline = true;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(200, 27);
+            txtUsuario.TabIndex = 3;
+            // 
             // txtPassword
-            this.txtPassword.Location = new Point(130, 87);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new Size(200, 27);
-            
+            // 
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Location = new Point(142, 104);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(200, 27);
+            txtPassword.TabIndex = 1;
+            // 
             // btnLogin
-            this.btnLogin.Location = new Point(130, 140);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new Size(100, 35);
-            this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new EventHandler(this.BtnLogin_Click);
-            
+            // 
+            btnLogin.BackColor = Color.LightPink;
+            btnLogin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Location = new Point(82, 154);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(100, 35);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Iniciar Sesión";
+            btnLogin.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogin_Click;
+            // 
+            // lblUsuario
+            // 
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Verdana", 9.75F, FontStyle.Bold | FontStyle.Italic);
+            lblUsuario.Location = new Point(40, 61);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(67, 16);
+            lblUsuario.TabIndex = 4;
+            lblUsuario.Text = "Usuario:";
+            lblUsuario.Click += lblUsuario_Click;
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Verdana", 9.75F, FontStyle.Bold | FontStyle.Italic);
+            lblPassword.Location = new Point(40, 111);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(96, 16);
+            lblPassword.TabIndex = 2;
+            lblPassword.Text = "Contraseña:";
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.PaleVioletRed;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(lblPassword);
+            groupBox1.Controls.Add(txtPassword);
+            groupBox1.Controls.Add(lblUsuario);
+            groupBox1.Controls.Add(btnLogin);
+            groupBox1.Controls.Add(txtUsuario);
+            groupBox1.Location = new Point(62, 44);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(462, 213);
+            groupBox1.TabIndex = 5;
+            groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Palatino Linotype", 24F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.Location = new Point(117, 8);
+            label1.Name = "label1";
+            label1.Size = new Size(248, 43);
+            label1.TabIndex = 7;
+            label1.Text = "Salon de belleza";
+            label1.Click += label1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LightPink;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Location = new Point(294, 154);
+            button2.Name = "button2";
+            button2.Size = new Size(100, 35);
+            button2.TabIndex = 6;
+            button2.Text = "Limpiar";
+            button2.TextImageRelation = TextImageRelation.ImageAboveText;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightPink;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Location = new Point(188, 154);
+            button1.Name = "button1";
+            button1.Size = new Size(100, 35);
+            button1.TabIndex = 5;
+            button1.Text = "Cerrar";
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // FrmLogin
-            this.ClientSize = new Size(400, 230);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lblUsuario);
-            this.Name = "FrmLogin";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Inicio de Sesión - Salón de Belleza";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(582, 298);
+            Controls.Add(groupBox1);
+            DoubleBuffered = true;
+            MaximizeBox = false;
+            Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inicio de Sesión - Salón de Belleza";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         private void BtnLogin_Click(object? sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text.Trim();
-            string password = txtPassword.Text.Trim();
-
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Por favor ingrese usuario y contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            using (var context = new SalonContext())
-            {
-                var user = context.Usuarios.FirstOrDefault(u => u.NombreUsuario == usuario && u.Password == password);
-
-                if (user != null)
-                {
-                    // Login exitoso
-                    MessageBox.Show($"Bienvenido {user.NombreUsuario} ({user.Rol})", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                    FrmMenuPrincipal menu = new FrmMenuPrincipal(user.Rol);
-                    this.Hide();
-                    menu.ShowDialog();
-                    this.Close(); // Cerrar aplicación después del menú
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            Formmenu nuevoForm = new Formmenu();
+            nuevoForm.Show();
+            this.Hide();   // Oculta el formulario actual en vez de cerrarlo
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtUsuario.Clear();   // Limpia el contenido del primer TextBox
+            txtPassword.Clear();
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        public TextBox txtUsuario;
+        public TextBox txtPassword;
+
     }
 }
